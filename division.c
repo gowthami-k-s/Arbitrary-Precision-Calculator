@@ -6,7 +6,11 @@ void division(Node *head1, Node *tail2, Node **headR, Node **tailR)
     Node *temp_head = NULL, *temp_tail = NULL;
     Node *add_head = NULL, *add_tail = NULL;
 
+    if(head1 == NULL || tail2 == NULL)
+        return;
+    
     insert_first(&temp_head, &temp_tail, 0);
+
     while(1)
     {
         add_head = NULL;
@@ -21,11 +25,12 @@ void division(Node *head1, Node *tail2, Node **headR, Node **tailR)
         }
 
         count++;
+
         delete_list(&temp_head, &temp_tail);
         temp_head = add_head;
         temp_tail = add_tail;
 
-        if(compare_list(add_head, head1) == SAME)
+        if(compare_list(temp_head, head1) == SAME)
         {
             break;
         }

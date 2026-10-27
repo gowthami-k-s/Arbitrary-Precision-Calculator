@@ -106,7 +106,7 @@ int main(int argc, char *argv[])
 
 	case '/':
 		res_sign = sign1 * sign2;
-		division(head1, head2, &headR, &tailR);
+		division(head1, tail2, &headR, &tailR);
 		printf("Division result is : ");
 	    break;
 

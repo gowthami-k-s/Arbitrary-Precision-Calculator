@@ -63,6 +63,15 @@ int cla_validation(int argc, char *argv[])
 
 int compare_list(Node *head1, Node *head2)
 {
+    while(head1 != NULL && head1->data == 0)
+    {
+        head1 = head1->next;
+    }
+    while(head2 != NULL && head2->data == 0)
+    {
+        head2 = head2->next;
+    }
+
     if(list_len(head1) > list_len(head2))
     {
         return OPERAND1;
